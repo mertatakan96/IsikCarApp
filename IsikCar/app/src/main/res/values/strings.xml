@@ -49,4 +49,165 @@
         <item>Üsküdar</item>
         <item>Zeytinburnu</item>
     </string-array>
+
+    <string-array name="citiesToPublish">
+        <item>Kalkış Noktası Seçiniz</item>
+        <item>Şile</item>
+        <item>Maslak</item>
+    </string-array>
+
+    <string-array name="citiesWherePublish">
+        <item>Varış Noktası Seçiniz</item>
+        <item>Şile - Kampüs</item>
+        <item>Maslak - Kampüs</item>
+        <item>Adalar</item>
+        <item>Arnavutköy</item>
+    <item>Ataşehir</item>
+    <item>Avcılar</item>
+    <item>Bağcılar</item>
+    <item>Bahçelievler</item>
+    <item>Bakırköy</item>
+    <item>Başakşehir</item>
+    <item>Bayrampaşa</item>
+    <item>Beşiktaş</item>
+    <item>Beykoz</item>
+    <item>Beylikdüzü</item>
+    <item>Beyoğlu</item>
+    <item>Büyükçekmece</item>
+    <item>Çatalca</item>
+    <item>Çekmeköy</item>
+    <item>Esenler</item>
+    <item>Esenyurt</item>
+    <item>Eyüpsultan</item>
+    <item>Fatih</item>
+    <item>Gaziosmanpaşa</item>
+    <item>Güngören</item>
+    <item>Kadıköy</item>
+    <item>Kağıthane</item>
+    <item>Kartal</item>
+    <item>Küçükçekmece</item>
+    <item>Maltepe</item>
+    <item>Pendik</item>
+    <item>Sancaktepe</item>
+    <item>Sarıyer</item>
+    <item>Silivri</item>
+    <item>Sultanbeyli</item>
+    <item>Sultangazi</item>
+    <item>Şile</item>
+    <item>Şişli</item>
+    <item>Tuzla</item>
+    <item>Ümraniye</item>
+    <item>Üsküdar</item>
+    <item>Zeytinburnu</item>
+    </string-array>
+
+    <string-array name="DateDay">
+        <item>Gün</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <string-array name="DateMonth">
+        <item>Ay</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="DateYear">
+        <item>Yıl</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+    </string-array>
+
+    <string-array name="Seat">
+        <item>Koltuk Sayısı Seçiniz</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="spinnerMinutes">
+        <item>Dakika</item>
+        <item>00</item>
+        <item>05</item>
+        <item>10</item>
+        <item>15</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+    </string-array>
+    <string-array name="spinnerHour">
+        <item>Saat</item>
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
 </resources>
