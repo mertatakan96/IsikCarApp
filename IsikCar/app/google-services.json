@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664996301236",
+    "project_id": "isikcar-d0caa",
+    "storage_bucket": "isikcar-d0caa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664996301236:android:64163b21e40486a4598ae1",
+        "android_client_info": {
+          "package_name": "com.dtmad.isikcar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664996301236-c9nkcjh6i5bko5t4potnv0vgc5p4s6u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD9mNvewz68_qO_KXl0ZkL_61KTtFrAO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664996301236-c9nkcjh6i5bko5t4potnv0vgc5p4s6u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
