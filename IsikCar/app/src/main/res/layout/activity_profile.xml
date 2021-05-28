@@ -22,4 +22,14 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"/>
 
+    <Button
+        android:id="@+id/signoutprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="signOutClicked"
+        android:text="Çıkış Yap"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        tools:layout_editor_absoluteX="161dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
