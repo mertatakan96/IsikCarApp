@@ -1,17 +1,41 @@
 package com.dtmad.isikcar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
+
+    Spinner spinnerTo;
+    Spinner spinnerWhere;
+
+    public void searchButtonClicked(View view){
+
+        Intent intentToList = new Intent(HomeActivity.this,ListSearchActivity.class);
+        intentToList.putExtra("spinnerTo",spinnerTo.getSelectedItem().toString());
+        intentToList.putExtra("spinnerWhere",spinnerWhere.getSelectedItem().toString());
+        startActivity(intentToList);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +43,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        Spinner spinnerTo = findViewById(R.id.spinnerTo);
-        Spinner spinnerWhere = findViewById(R.id.spinnerWhere);
+        spinnerTo = findViewById(R.id.spinnerTo);
+        spinnerWhere = findViewById(R.id.spinnerWhere);
         ArrayAdapter<String> myAdapterTo = new ArrayAdapter<String>(HomeActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.citiesTo));
         myAdapterTo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -29,7 +53,6 @@ public class HomeActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.citiesWhere));
         myAdapterWhere.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerWhere.setAdapter(myAdapterWhere);
-        //textViewSpinner.setText(mySpinner.getSelectedItem().toString());// Spinnerdan değer okumak*/
 
 
         //Initialize and Assign Variable
