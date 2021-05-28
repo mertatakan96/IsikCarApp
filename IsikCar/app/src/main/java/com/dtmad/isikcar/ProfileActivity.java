@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        signOutButton = findViewById(R.id.signoutprofile);
+        //signOutButton = findViewById(R.id.signoutprofile);
 
 
         //Initialize and Assign Variable
