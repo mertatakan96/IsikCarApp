@@ -33,7 +33,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerToPublish" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerWherePublish" />
 
     <Spinner
         android:id="@+id/spinnerDateMonth"
@@ -44,7 +44,7 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toStartOf="@+id/spinnerDateYear"
         app:layout_constraintStart_toEndOf="@+id/spinnerDateDay"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerToPublish" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerWherePublish" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -62,7 +62,7 @@
         app:labelVisibilityMode="labeled"/>
 
     <Spinner
-        android:id="@+id/spinnerWherePublish"
+        android:id="@+id/spinnerToPublish"
         android:layout_width="250dp"
         android:layout_height="25dp"
         android:layout_marginTop="32dp"
@@ -78,17 +78,17 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerToPublish" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerWherePublish" />
 
     <Spinner
-        android:id="@+id/spinnerToPublish"
+        android:id="@+id/spinnerWherePublish"
         android:layout_width="250dp"
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerWherePublish" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerToPublish" />
 
     <Spinner
         android:id="@+id/spinnerSeat"
@@ -140,11 +140,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:backgroundTint="@color/lighterBlue"
+        android:onClick="publishClicked"
         android:text="İlan Oluştur"
+        android:textColor="@color/darkerBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceText"
-        android:backgroundTint="@color/lighterBlue"
-        android:textColor="@color/darkerBlue"/>
+        app:layout_constraintTop_toBottomOf="@+id/priceText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
