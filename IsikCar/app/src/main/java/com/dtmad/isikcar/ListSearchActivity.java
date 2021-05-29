@@ -1,5 +1,6 @@
 package com.dtmad.isikcar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,7 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,6 +39,7 @@ public class ListSearchActivity extends AppCompatActivity {
 
         CollectionReference collectionReference = firebaseFirestore.collection("trips");
 
+
         collectionReference.whereEqualTo("To",placeTo).whereEqualTo("Where",placeWhere).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -45,23 +50,34 @@ public class ListSearchActivity extends AppCompatActivity {
 
                 if (value!=null){
                     for (DocumentSnapshot snapshot : value.getDocuments()){
-                        Map<String, Object> data = snapshot.getData();
+                        Map<String, Object> tripData = snapshot.getData();
 
-                        String tripTo = (String) data.get("To");
-                        String tripWhere = (String) data.get("Where");
-                        String userID = (String) data.get("User");
-
-                        matchTripTo.add(tripTo);
-                        matchTripWhere.add(tripWhere);
-                        matchTripUser.add(userID);
-
-                        listRecyclerAdapter.notifyDataSetChanged();
+                        String tripTo = (String) tripData.get("To");
+                        String tripWhere = (String) tripData.get("Where");
+                        String userID = (String) tripData.get("User");
+                        //Collection dan diğer collectionın bilgisini almak
+                        DocumentReference dc = firebaseFirestore.collection("users").document(userID);
+                        dc.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                DocumentSnapshot ds = task.getResult();
+                                String name = (String) ds.get("Name");
+                                matchTripUser.add(name);
+                                matchTripTo.add(tripTo);
+                                matchTripWhere.add(tripWhere);
+                                listRecyclerAdapter.notifyDataSetChanged();
+                            }
+                        });
+                        //matchTripTo.add(tripTo);
+                        //matchTripWhere.add(tripWhere);
+                        //matchTripUser.add(userID);
+                        //System.out.println(name);
+                        //listRecyclerAdapter.notifyDataSetChanged();
 
                     }
                 }
             }
         });
-
     }
 
 
