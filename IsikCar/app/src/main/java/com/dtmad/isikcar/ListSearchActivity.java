@@ -163,13 +163,14 @@ public class ListSearchActivity extends AppCompatActivity {
                         reservationData.put("Time", matchTripTime.get(position));
                         reservationData.put("Plate",matchTripPlate.get(position));
                         reservationData.put("Phone", matchTripPhone.get(position));
+                        reservationData.put("Price", matchTripPrice.get(position));
 
                         firebaseFirestore.collection("reservation").add(reservationData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Toast.makeText(ListSearchActivity.this, "Rezervasyonunuz Yapıldı", Toast.LENGTH_SHORT).show();
-                                Intent intentToReservations = new Intent(ListSearchActivity.this, ReservationActivity.class);
-                                startActivity(intentToReservations);
+                                Intent intentToProfile = new Intent(ListSearchActivity.this, ProfileActivity.class);
+                                startActivity(intentToProfile);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override

@@ -8,14 +8,22 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    Button signOutButton;
+    TextView nameSurnameText;
     FirebaseAuth firebaseAuth;
+    FirebaseFirestore firebaseFirestore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +31,21 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
-        //signOutButton = findViewById(R.id.signoutprofile);
+        userID = firebaseAuth.getCurrentUser().getUid();
+
+        nameSurnameText = findViewById(R.id.nameSurnameText);
+
+        DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot ds = task.getResult();
+                String name = (String) ds.get("Name");
+                nameSurnameText.setText("Merhaba, \n" + "  " + name);
+            }
+        });
 
 
         //Initialize and Assign Variable
@@ -70,5 +91,10 @@ public class ProfileActivity extends AppCompatActivity {
         Intent signOutIntent = new Intent(ProfileActivity.this,WelcomeActivity.class);
         startActivity(signOutIntent);
         finish();
+    }
+
+    public void myReservationsClicked(View view){
+        Intent intentToReservations = new Intent(ProfileActivity.this,ReservationActivity.class);
+        startActivity(intentToReservations);
     }
 }
