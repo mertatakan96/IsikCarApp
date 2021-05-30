@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IsikCar">
-        <activity android:name=".ListSearchActivity"></activity>
+        <activity android:name=".ReservationActivity"></activity>
+        <activity android:name=".ListSearchActivity" />
         <activity android:name=".SSSActivity" />
         <activity android:name=".PublishActivity" />
         <activity android:name=".ProfileActivity" />
