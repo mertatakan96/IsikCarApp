@@ -33,10 +33,11 @@
         app:srcCompat="@drawable/profile_back" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageViewPhoto"
         android:layout_width="177dp"
         android:layout_height="169dp"
         android:layout_marginTop="140dp"
+        android:onClick="selectImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +51,7 @@
         android:onClick="myPublicationClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPhoto"
         app:srcCompat="@drawable/published" />
 
     <ImageView
@@ -69,6 +70,7 @@
         android:layout_width="347dp"
         android:layout_height="63dp"
         android:layout_marginTop="10dp"
+        android:onClick="myInformationClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"

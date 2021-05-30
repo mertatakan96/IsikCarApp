@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dtmad.isikcar">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IsikCar">
-        <activity android:name=".MyPublicationActivity"></activity>
+        <activity android:name=".InformationActivity"></activity>
+        <activity android:name=".MyPublicationActivity" />
         <activity android:name=".ReservationActivity" />
         <activity android:name=".ListSearchActivity" />
         <activity android:name=".SSSActivity" />

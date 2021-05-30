@@ -49,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
         String phone = phoneText.getText().toString();
         String email = emailText.getText().toString().trim();
         String password = passwordText.getText().toString().trim();
+        String photo = "";
 
         if (TextUtils.isEmpty(email)){
             emailText.setError("Email is required");
@@ -63,6 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
                 user.put("Name", name);
                 user.put("Phone", phone);
                 user.put("Email", email);
+                user.put("Photo", photo);
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

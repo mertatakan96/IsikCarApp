@@ -52,6 +52,7 @@ public class ListSearchActivity extends AppCompatActivity {
     String placeTo, placeWhere;
     String passengerID;
 
+
     public void getDataFromFirestore(){
 
         placeTo = getIntent().getStringExtra("spinnerTo");
@@ -154,6 +155,8 @@ public class ListSearchActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+
+
                         Map<String, Object> reservationData = new HashMap<>();
                         reservationData.put("Driver", matchTripUserID.get(position));
                         reservationData.put("Passenger", passengerID);
@@ -164,6 +167,7 @@ public class ListSearchActivity extends AppCompatActivity {
                         reservationData.put("Plate",matchTripPlate.get(position));
                         reservationData.put("Phone", matchTripPhone.get(position));
                         reservationData.put("Price", matchTripPrice.get(position));
+
 
                         firebaseFirestore.collection("reservation").add(reservationData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
