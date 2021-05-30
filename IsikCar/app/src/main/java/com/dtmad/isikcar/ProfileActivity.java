@@ -2,6 +2,7 @@ package com.dtmad.isikcar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -96,5 +97,10 @@ public class ProfileActivity extends AppCompatActivity {
     public void myReservationsClicked(View view){
         Intent intentToReservations = new Intent(ProfileActivity.this,ReservationActivity.class);
         startActivity(intentToReservations);
+    }
+
+    public void myPublicationClicked(View view){
+        Intent intentToPublications = new Intent(ProfileActivity.this,MyPublicationActivity.class);
+        startActivity(intentToPublications);
     }
 }

@@ -47,6 +47,7 @@
         android:layout_width="347dp"
         android:layout_height="63dp"
         android:layout_marginTop="30dp"
+        android:onClick="myPublicationClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
