@@ -73,9 +73,12 @@ public class ProfileActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot ds = task.getResult();
                 String name = (String) ds.get("Name");
-                //String downloadUrl = (String) ds.get("Photo");
+                String downloadUrl = (String) ds.get("Photo");
                 nameSurnameText.setText("Merhaba, \n" + "  " + name);
-                //Picasso.get().load(downloadUrl).into(imageViewPhoto);
+                if (downloadUrl != null){
+                    Picasso.get().load(downloadUrl).into(imageViewPhoto);
+                }
+
             }
         });
 
